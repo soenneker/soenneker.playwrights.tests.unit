@@ -1,7 +1,9 @@
+using System.Threading;
 using Soenneker.Tests.FixturedUnit;
 using System.Threading.Tasks;
 using Soenneker.Playwrights.Fixtures;
 using Soenneker.Playwrights.Session;
+using Soenneker.Playwrights.TestEnvironment.Options;
 using Xunit;
 
 namespace Soenneker.Playwrights.Tests.Unit;
@@ -20,8 +22,8 @@ public abstract class PlaywrightUnitTest : FixturedUnitTest
         Fixture = fixture;
     }
 
-    protected ValueTask<BrowserSession> CreateSession()
+    protected ValueTask<BrowserSession> CreateSession(PlaywrightSessionOptions? sessionOptions = null, CancellationToken cancellationToken = default)
     {
-        return Fixture.CreateSession();
+        return Fixture.CreateSession(sessionOptions, cancellationToken);
     }
 }
