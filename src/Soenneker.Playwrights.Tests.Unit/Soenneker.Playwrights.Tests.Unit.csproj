@@ -44,6 +44,6 @@
 
     <ItemGroup>
       <PackageReference Include="Soenneker.Playwrights.Fixtures" Version="4.0.8" />
-      <PackageReference Include="Soenneker.Tests.FixturedUnit" Version="4.0.2296" />
+      <PackageReference Include="Soenneker.Tests.FixturedUnit" Version="4.0.2300" />
     </ItemGroup>
 </Project>
