@@ -1,29 +1,28 @@
 using System.Threading;
-using Soenneker.Tests.FixturedUnit;
 using System.Threading.Tasks;
-using Soenneker.Playwrights.Fixtures;
 using Soenneker.Playwrights.Session;
 using Soenneker.Playwrights.TestEnvironment.Options;
-using Xunit;
+using Soenneker.Playwrights.TestHosts;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Playwrights.Tests.Unit;
 
 /// <summary>
-/// A fixtured unit test for testing with Playwright
+/// A hosted unit test for testing with Playwright
 /// </summary>
-public abstract class PlaywrightUnitTest : FixturedUnitTest
+public abstract class PlaywrightUnitTest : HostedUnitTest
 {
-    protected PlaywrightFixture Fixture { get; }
+    protected PlaywrightTestHost TestHost { get; }
 
-    protected string BaseUrl => Fixture.BaseUrl;
+    protected string BaseUrl => TestHost.BaseUrl;
 
-    protected PlaywrightUnitTest(PlaywrightFixture fixture, ITestOutputHelper outputHelper) : base(fixture, outputHelper)
+    protected PlaywrightUnitTest(PlaywrightTestHost testHost) : base(testHost)
     {
-        Fixture = fixture;
+        TestHost = testHost;
     }
 
     protected ValueTask<BrowserSession> CreateSession(PlaywrightSessionOptions? sessionOptions = null, CancellationToken cancellationToken = default)
     {
-        return Fixture.CreateSession(sessionOptions, cancellationToken);
+        return TestHost.CreateSession(sessionOptions, cancellationToken);
     }
 }
