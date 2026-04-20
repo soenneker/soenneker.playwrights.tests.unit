@@ -43,7 +43,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Soenneker.Playwrights.Fixtures" Version="4.0.13" />
+      <PackageReference Include="Soenneker.Playwrights.Fixtures" Version="4.0.14" />
       <PackageReference Include="Soenneker.Tests.FixturedUnit" Version="4.0.2301" />
     </ItemGroup>
 </Project>
