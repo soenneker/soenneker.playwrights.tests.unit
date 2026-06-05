@@ -12,8 +12,14 @@ namespace Soenneker.Playwrights.Tests.Unit;
 /// </summary>
 public abstract class PlaywrightUnitTest : HostedUnitTest
 {
+    /// <summary>
+    /// Gets test host.
+    /// </summary>
     public PlaywrightTestHost TestHost { get; }
 
+    /// <summary>
+    /// Gets or sets base url.
+    /// </summary>
     public string BaseUrl => TestHost.BaseUrl;
 
     public PlaywrightUnitTest(PlaywrightTestHost testHost) : base(testHost)
