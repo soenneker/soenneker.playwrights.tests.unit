@@ -41,7 +41,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Playwrights.TestHosts" Version="4.0.198" />
+        <PackageReference Include="Soenneker.Playwrights.TestHosts" Version="4.0.199" />
         <PackageReference Include="Soenneker.Tests.HostedUnit" Version="4.0.233" />
     </ItemGroup>
 </Project>
